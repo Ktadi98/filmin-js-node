@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/imgs/favicon.ico" />
+    <title>Filmin'</title>
+
+    <!-- Iconos Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!--Google Material Icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <!--Animate On Scroll Library-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="css/index.css" />
+    <!--Estilos generales-->
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- Estilos generales -->
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <!--Animate On Scroll Script-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!--Scripts Propios-->
+    <script src="js/header.js"></script>
+    <script src="js/index.js"></script>
+  </head>
+  <body>
+    <%-include("partials/header")%>
+    <main>
+      <!-- Tipos de suscripción -->
+      <section data-aos="fade-up" class="row card-container">
+        <div class="col-m-3 card-item">
+          <p class="sus">Suscripción Light</p>
+          <p>Calidad FULLHD hasta en 5 dispositivos</p>
+          <h2>8,99€/mes</h2>
+        </div>
+        <div class="col-m-3 card-item">
+          <p class="sus">Suscripción Medium</p>
+          <p>Calidad 4K hasta en 10 dispositivos</p>
+          <h2>14,99€/mes</h2>
+        </div>
+        <div class="col-m-3 card-item">
+          <p class="sus">Suscripción Anual</p>
+          <p>Calidad 4K hasta en 10 dispositivos(17% de descuento)</p>
+          <h2>149,99€/año</h2>
+        </div>
+      </section>
+      <section class="row eslogan">
+        <div data-aos="fade-up" class="col-m-12">
+          <p id="eslogan1">Tus series y películas siempre contigo</p>
+        </div>
+        <div data-aos="fade-up" class="col-m-12">
+          <p id="eslogan2">Los mayores éxitos a distancia de un click. Emócionate y disfruta</p>
+        </div>
+      </section>
+      <!-- Carrousel de series/pelis -->
+      <section class="video-carousel">
+        <div class="videos">
+          <div><img src="assets/imgs/video-1.jpg" alt="video-1" /></div>
+          <div><img src="assets/imgs/videos-2.webp" alt="video-2" /></div>
+          <div><img src="assets/imgs/video-3.webp" alt="video-3" /></div>
+          <div><img src="assets/imgs/video-4.jpg" alt="video-4" /></div>
+          <div><img src="assets/imgs/video-5.webp" alt="video-5" /></div>
+          <div><img src="assets/imgs/video-6.webp" alt="video-6" /></div>
+          <div><img src="assets/imgs/video-7.webp" alt="video-7" /></div>
+          <div><img src="assets/imgs/video-8.webp" alt="video-8" /></div>
+          <div><img src="assets/imgs/video-9.webp" alt="video-9" /></div>
+          <div><img src="assets/imgs/video-10.webp" alt="video-10" /></div>
+        </div>
+      </section>
+      <!-- Parte de funciones de la aplicación -->
+      <section class="row funciones">
+        <div data-aos="fade-up" class="col-m-3">
+          <h2>Descarga y lleva el contenido contigo</h2>
+          <hr />
+          <span class="material-icons md-48"> &#xe648; </span>
+        </div>
+        <div data-aos="fade-up" class="col-m-3">
+          <h2>Reproducción simultánea</h2>
+          <hr />
+          <span class="material-icons md-48"> &#xe1b1; </span>
+        </div>
+        <div data-aos="fade-up" class="col-m-3">
+          <h2>Perfiles personalizados</h2>
+          <hr />
+          <span class="material-icons md-48"> &#xe7fb; </span>
+        </div>
+      </section>
+      <!-- Parte de los dispositivos disponibles -->
+      <section class="row dispositivos">
+        <div data-aos="fade-up" class="col-m-3">
+          <i class="fa-solid fa-8x fa-laptop"></i>
+          <h2>Ordenador</h2>
+          <hr />
+          <p>MacOS</p>
+          <p>ChromeOS</p>
+          <p>WindowsPC</p>
+        </div>
+        <div data-aos="fade-up" class="col-m-3">
+          <i class="fa-solid fa-8x fa-mobile"></i>
+          <h2>Móvil</h2>
+          <hr />
+          <p>IPhone</p>
+          <p>Android</p>
+        </div>
+        <div data-aos="fade-up" class="col-m-3">
+          <i class="fa-solid fa-8x fa-tv"></i>
+          <h2>TV</h2>
+          <hr />
+          <p>Apple TV</p>
+          <p>Android TV</p>
+          <p>ChromeCast</p>
+        </div>
+      </section>
+
+      <!-- Parte de FAQ's -->
+      <section class="usual-questions">
+        <div data-aos="fade-right" class="row questions">
+          <h2 class="col-m-12">Todo lo que hay que saber sobre Filmin'</h2>
+          <div class="col-m-12">
+            <span class="question">¿Qué es Filmin'?</span>
+            <span id="add1" class="add"> &#43; </span>
+          </div>
+          <p class="col-m-12" id="answer1"></p>
+          <div class="col-m-12">
+            <span class="question">¿Dónde puedo ver Filmin'?</span>
+            <span id="add2" class="add"> &#43; </span>
+          </div>
+          <p class="col-m-12" id="answer2"></p>
+          <div class="col-m-12">
+            <span class="question">¿Dónde puedo recibir ayuda si hay algún problema?</span>
+            <span id="add3" class="add"> &#43; </span>
+          </div>
+          <p class="col-m-12" id="answer3"></p>
+          <div class="col-m-12">
+            <span class="question">¿Cómo cancelo?</span>
+            <span id="add4" class="add"> &#43; </span>
+          </div>
+          <p class="col-m-12" id="answer4"></p>
+        </div>
+      </section>
+    </main>
+    <%-include("partials/footer")%>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

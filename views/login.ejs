@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/imgs/favicon.ico" />
+    <title>Login Formulario</title>
+
+    <!-- Iconos Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!--Animate On Scroll Library-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!--Estilos generales-->
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- Estilos generales -->
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <!-- Estilos de los formularios -->
+    <link rel="stylesheet" href="css/form.css" />
+
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="css/login.css" />
+
+    <!--Animate On Scroll Script-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!--Scripts Propios-->
+    <script src="js/header.js"></script>
+
+    <script type="module" src="js/login.js"></script>
+  </head>
+  <body>
+    <%-include("partials/header")%>
+    <main>
+      <div data-aos="fade-left" class="row login-container">
+        <!-- <i class="fa-solid fa-xmark fa-lg"></i> -->
+        <form novalidate class="col-m-12 login">
+          <h1>Iniciar Sesión</h1>
+          <div class="row form-field">
+            <label class="col-m-12" for="correo">Correo</label>
+            <input class="col-m-12" name="email" type="email" id="correo" />
+            <!-- <span class="col-m-12 material-icons md-48"></span> -->
+            <span class="col-m-12"></span>
+          </div>
+          <div class="row form-field eye">
+            <label class="col-m-12" for="pass">Contraseña</label>
+            <input class="col-m-12" name="pass" type="password" id="pass" />
+            <i id="eye" class="fa-solid fa-eye fa-lg"></i>
+            <!-- <span class="col-m-12 material-icons md-48"></span> -->
+            <span class="col-m-12"></span>
+          </div>
+          <div class="row form-field">
+            <button class="col-m-12" type="submit">Iniciar Sesión</button>
+          </div>
+          <div class="row check-field">
+            <div class="col-m-5">
+              <input name="checkbox" type="checkbox" id="recordarme" />
+              <label for="recordarme">Recuérdame</label>
+            </div>
+            <div class="col-m-5"><a href="/contacto">¿Necesitas ayuda?</a></div>
+          </div>
+          <div class="row" id="recuperar">
+            <a href="/recuperarPass">Recuperar contraseña</a>
+          </div>
+          <div class="row yet">
+            <div class="col-m-12">
+              <p>¿Todavía sin Filmin'?</p>
+              <a href="/register"> Suscríbete ya</a>
+            </div>
+          </div>
+          <span></span>
+        </form>
+      </div>
+    </main>
+    <%-include("partials/footer")%>
+    <!-- Iniciar librería de animaciones on scroll -->
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

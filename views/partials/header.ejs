@@ -1,0 +1,54 @@
+<header>
+  <nav>
+    <ul class="row">
+      <li class="col-m-5 logo-box">
+        <a href="#"><img id="logo" src="./assets/imgs/logo4.png" alt="logo-img" /></a>
+      </li>
+      <!-- Si no se ha iniciado sesión se muestran los botones de "Inicio Sesión" y "Registro" -->
+      <%if (!userEmail) { %>
+      <div data-aos="fade-right" class="col-m-5" id="buttons-box">
+        <li class="user-buttons">
+          <a href="/login" <% if(pageName==="login") {%> style="border: 3px solid black; color:black;" <%}%>>Iniciar Sesión</a>
+        </li>
+        <li class="user-buttons"><a href="/register" <% if(pageName==="register") {%> style="border: 3px solid black; color:black;" <%}%>>Suscríbete</a></li>
+      </div>
+      <!-- Si se ha iniciado sesión se muestra el botón de "Cerrar Sessión" -->
+      <% } else { %>
+      <div data-aos="fade-right" class="col-m-5" id="buttons-box">
+        <li class="user-buttons">
+          <a href="/logOut">Cerrar Sesión</a>
+        </li>
+      </div>
+      <% } %>
+    </ul>
+  </nav>
+</header>
+<header class="col-m-12">
+  <div class="nav-bar">
+    <!-- nav-bar desktop -->
+    <nav class="nav-bar-desktop nav-bar-expand-m">
+      <ul>
+        <!-- Si no se ha iniciado sesión se muestran estos ítems -->
+        <% if (!userEmail) { %>
+        <li>
+          <a href="/" <% if(pageName==="index") {%> style="color: #26d0ce;
+            text-decoration: underline;" <%}%>>Inicio</a>
+        </li>
+        <li>
+          <a href="/contacto" <% if(pageName==="contacto") {%> style="color: #26d0ce;
+            text-decoration: underline;" <%}%>>Contacto</a>
+        </li>
+        <% } else { %>
+        <li><a href="/perfil" <% if(pageName==="perfil") {%> style="color: #26d0ce;
+          text-decoration: underline;" <%}%>>Configuración Usuario</a></li>
+        <li><a id="perfilesLink" href="/selectPerfil" <% if(pageName==="selectPerfil") {%> style="color: #26d0ce;
+          text-decoration: underline;" <%}%>>Perfiles</a></li>
+        <li><a href="/contacto" <% if(pageName==="contacto") {%> style="color: #26d0ce;
+          text-decoration: underline;" <%}%>>Contacto</a></li>
+        <% } %>
+      </ul>
+    </nav>
+    <!-- icono burger -->
+    <i class="fas fa-bars burger d-none"></i>
+  </div>
+</header>

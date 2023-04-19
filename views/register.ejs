@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/imgs/favicon.ico" />
+    <title>Registro Formulario</title>
+
+    <!-- Iconos Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!--Google Material Icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <!--Animate On Scroll Library-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="css/register.css" />
+    <!-- Estilos de los formularios -->
+    <link rel="stylesheet" href="css/form.css" />
+    <!--Estilos generales-->
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- Estilos generales -->
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <!--Animate On Scroll Script-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!--Scripts Propios-->
+    <script src="js/header.js"></script>
+    <script type="module" src="js/register.js"></script>
+  </head>
+  <body>
+    <%-include("partials/header")%>
+    <main>
+      <form data-aos="fade-left" class="register-container">
+        <h2>Crea tu cuenta</h2>
+        <p>¿Preparado para disfrutar de las mejores series y películas?</p>
+        <div class="row nombre">
+          <div class="col-m-5">
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre" />
+            <br />
+            <span class="col-m-5"></span>
+          </div>
+          <div class="col-m-5">
+            <input type="text" name="apellido" id="apellido" placeholder="Apellido" />
+            <br />
+            <span class="col-m-5"></span>
+          </div>
+        </div>
+        <div class="row correo">
+          <input
+            class="col-m-12"
+            name="email"
+            type="email"
+            id="email"
+            placeholder="Correo Electrónico"
+          />
+          <span class="col-m-12"></span>
+        </div>
+        <div class="row pass">
+          <input class="col-m-12" name="pass" type="password" id="pass" placeholder="Contraseña" />
+          <span id="pass-restrictions" class="col-m-12"
+            >Tu contraseña debe contener al menos 8 caracteres, un número, y un caracter
+            especial.</span
+          >
+        </div>
+        <div class="row confirmacion">
+          <p class="col-m-12">
+            Al hacer clic en Crear cuenta, confirmas que eres mayor de 18 años, aceptas los Términos
+            de Uso y reconoces que has leído/aceptado nuestra Política de Privacidad.
+          </p>
+          <button class="col-m-12" type="submit">Crear Cuenta</button>
+        </div>
+        <div class="consentimiento">
+          <p>
+            Para revocar su consentimiento (incluyendo cualquier otro consentimiento que usted
+            hubiera podido otorgar previamente) y obtener más información acerca de sus derechos y
+            de cómo ejercitarlos, revise la Política de Privacidad.
+          </p>
+        </div>
+        <span></span>
+      </form>
+    </main>
+    <%-include("partials/footer")%>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
+
+:root {
+  --first-bg-color: rgba(22, 22, 26, 1);
+  /*rgb(57, 162, 219)
+rgb(162, 219, 250)
+rgb(232, 240, 242) */
+  --border-font-color: #f8f9fa;
+  --bg-gradient: linear-gradient(
+    10deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 37%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}
+
+button {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+/*===========Estilos Header=========*/
+
+header {
+  background-color: rgba(22, 22, 26, 0.6);
+}
+
+a:hover {
+  text-decoration: underline !important;
+}
+
+ul {
+  padding: 15px;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.logo-box {
+  text-align: center;
+}
+
+#logo {
+  max-width: 100%;
+  width: 150px;
+  height: auto;
+  text-align: center;
+}
+
+#buttons-box {
+  display: flex;
+  gap: 20px;
+  margin-top: -30px;
+  justify-content: center;
+}
+
+.user-buttons {
+  text-align: end;
+}
+
+.user-buttons a {
+  color: black;
+  text-decoration: none;
+  border: 1px solid black;
+  padding: 5px 30px;
+  border-radius: 50px;
+  border: 3px solid #f8f9fa;
+  transition: all 0.5s;
+  text-align: center;
+  font-weight: bold;
+  transition: 0.2s;
+  background-size: 200% auto;
+  color: #f8f9fa;
+  box-shadow: 0 0 2px #eee;
+  font-size: 12px;
+}
+
+/*Header buttons gradient and transition obtained in: https://gradientbuttons.colorion.co/*/
+
+.user-buttons a {
+  background-image: linear-gradient(to right, #1a2980 0%, #26d0ce 75%, #1a2980 100%);
+}
+
+.user-buttons a:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #f8f9fa;
+  text-decoration: none;
+}
+
+/*-->Clase para destacar el enlace actual*/
+.active {
+  color: #26d0ce;
+  text-decoration: underline;
+}
+/*===========Estilos Footer=========*/
+
+footer {
+  background-color: #1a2980;
+  padding: 15px;
+  text-align: center;
+  color: #f8f9fa;
+}
+
+footer p {
+  font-size: 10px;
+}
+
+footer ul {
+  padding: 0;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+footer ul li {
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: #f8f9fa;
+  opacity: 70%;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Scrollbar CSS ===== */
+
+/* Scrollbar generado con: https://codepen.io/stephenpaton-tech/full/JjRvGmY */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #39a2db #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #39a2db;
+  border-radius: 10px;
+  border: 3px solid #ffffff;
+}
+
+/*Material Icons styles (to render correctly)*/
+
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+.d-none {
+  display: none !important;
+}

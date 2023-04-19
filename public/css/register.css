@@ -1,0 +1,102 @@
+body {
+  background: linear-gradient(
+    10deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 37%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+main {
+  justify-content: center;
+  display: flex;
+  padding: 20px;
+}
+
+/*================Estilos del contenedor del registro================*/
+
+.register-container {
+  position: relative;
+  background-color: rgb(25, 25, 25);
+  border-radius: 5px;
+  max-width: 576px;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  padding: 50px 58px 30px;
+  color: rgba(255, 255, 255, 0.75);
+  gap: 25px;
+}
+
+.register-container h2 {
+  margin-bottom: 10px;
+}
+
+.register-container p {
+  font-weight: 100;
+}
+
+input {
+  background-color: rgb(25, 25, 25);
+  border: none;
+  border-bottom: 2px solid #eee;
+  color: white;
+  padding: 5px;
+  font-family: "Noto Sans JP", sans-serif;
+  width: 89%;
+}
+
+input:focus {
+  outline: 0;
+}
+
+.nombre {
+  gap: 30px;
+}
+
+#pass-restrictions {
+  color: rgba(0, 212, 255, 1);
+  margin-top: 10px;
+}
+
+/*=================Estilos de la seccion de información=================0**/
+
+.confirmacion {
+  gap: 15px;
+  padding: 15px;
+  border: 1px solid #f8f9fa;
+  border-radius: 3px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.confirmacion p,
+.consentimiento p {
+  font-size: 10px;
+}
+
+button {
+  border: 3px solid white;
+  background-color: rgb(25, 25, 25);
+  color: white;
+  border-radius: 15px;
+  transition: all 0.3s ease-in-out;
+  padding: 5px 10px 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: rgba(0, 212, 255, 1);
+  color: rgb(25, 25, 25);
+}
+
+/*=====================Estilos de la sección de consentimiento*/
+
+.consentimiento {
+  text-align: left;
+}

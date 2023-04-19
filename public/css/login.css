@@ -1,0 +1,130 @@
+body {
+  /* background: rgb(2, 0, 36);
+  background: linear-gradient(
+    10deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 77%,
+    rgba(0, 212, 255, 1) 100%
+  ); */
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../assets/imgs/films.jpg");
+}
+
+p,
+h1,
+label {
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(0, 212, 255, 1);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.login-container {
+  position: relative;
+  background-color: rgb(25, 25, 25);
+  border-radius: 5px;
+  max-width: 576px;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 58px 30px;
+}
+
+.login {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  text-align: left;
+  gap: 20px;
+}
+
+input {
+  font-size: larger;
+  background-color: rgb(25, 25, 25);
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+label {
+  color: rgba(0, 212, 255, 1);
+}
+
+input:focus {
+  outline: 0;
+}
+
+.form-field {
+  gap: 20px;
+}
+
+button {
+  border: 3px solid white;
+  background-color: rgb(25, 25, 25);
+  color: white;
+  border-radius: 15px;
+  transition: all 0.3s ease-in-out;
+  padding: 5px 10px 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: rgba(0, 212, 255, 1);
+  color: rgb(25, 25, 25);
+}
+
+/*====================Estilos de los íconos*===============*/
+
+.eye {
+  position: relative;
+}
+
+.fa-eye,
+.fa-eye-slash {
+  color: aliceblue;
+  position: absolute;
+  opacity: 0.8;
+  right: 10px;
+  bottom: 80px;
+  transition: all 0.1s ease-in-out;
+}
+
+.fa-eye:hover,
+.fa-eye-slash:hover {
+  color: rgba(0, 212, 255, 1);
+  cursor: pointer;
+}
+
+/*=================================Estilos del pie del formulario====================================*/
+
+input[type="checkbox"] {
+  background-color: gray;
+  color: black;
+}
+
+#recordarme,
+#recuperar {
+  font-size: smaller;
+}
+.check-field,
+.yet {
+  justify-content: space-between;
+  font-size: smaller;
+}
+
+.yet {
+  justify-content: space-between;
+}

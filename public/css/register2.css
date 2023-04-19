@@ -1,0 +1,110 @@
+:root {
+  --button-color: rgba(0, 212, 255, 1);
+  --background-register-gradient: linear-gradient(
+    10deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 37%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  --test-border: 2px solid black;
+}
+
+body {
+  background: var(--background-register-gradient);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+p,
+h1,
+h2,
+h3,
+button {
+  color: white;
+}
+
+main {
+  padding: 20px;
+  gap: 20px;
+}
+main p {
+  text-align: justify;
+}
+
+/*Estilos generales de la vista de suscripciones*/
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.j-cont-c {
+  justify-content: center;
+}
+
+.a-items-c {
+  align-items: center;
+}
+
+.p-40 {
+  padding: 40px;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.gap-20 {
+  gap: 20px;
+}
+
+/*Estilos de las cajas de suscripciones */
+
+#eligeSuscripcion p {
+  font-weight: 200;
+}
+
+#suscriptionsBox {
+  gap: 20px;
+}
+
+.suscripcion {
+  border: 0.5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 7px;
+  /* background: var(--background-register-gradient); */
+  background: rgba(0, 0, 0, 0);
+  margin-left: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.suscripcion p {
+  opacity: 0.85;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+button {
+  background-color: rgba(0, 0, 0, 0);
+  width: 120px;
+  transition: all 0.3s ease-in-out;
+  display: block;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  margin: 10px auto;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 212, 255, 0.8);
+  color: black;
+}
+
+@media screen and (max-width: 576px) {
+  main {
+    text-align: center;
+    font-size: small;
+  }
+}

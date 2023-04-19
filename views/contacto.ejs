@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/imgs/favicon.ico" />
+    <title>Filmin'</title>
+
+    <!-- Iconos Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!--Estilos generales-->
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- Estilos generales -->
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="css/form.css" />
+    <link rel="stylesheet" href="css/contacto.css" />
+
+    <!--Scripts Propios-->
+    <script src="js/header.js"></script>
+    <script type="module" src="js/contacto.js"></script>
+  </head>
+  <body>
+    <%-include("partials/header")%>
+    <main>
+      <div id="cajaContacto" class="row">
+        <div class="col-m-12">
+          <i class="fa-solid fa-envelope fa-2xl"></i>
+        </div>
+        <div class="col-m-12">
+          <p>Envíanos tu pregunta y te responderemos vía email</p>
+          <h2>Escribir a Servicio al Cliente</h2>
+        </div>
+        <form class="col-m-12">
+          <label for="nombre">Nombre</label>
+          <input type="text" name="nombre" id="nombre" />
+          <span></span>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" />
+          <span></span>
+          <label for="mensaje">Comentario:</label>
+          <textarea spellcheck="false" name="mensaje" id="mensaje"></textarea>
+          <span></span>
+          <button type="submit">Enviar</button>
+          <span></span>
+        </form>
+      </div>
+    </main>
+    <%-include("partials/footer")%>
+  </body>
+</html>

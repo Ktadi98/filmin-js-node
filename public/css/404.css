@@ -1,0 +1,43 @@
+body {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../assets/imgs/films.jpg");
+}
+
+main {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main a {
+  font-size: 3rem;
+}
+main p {
+  color: whitesmoke;
+  font-size: 5rem;
+}
+
+main a {
+  text-decoration: none;
+  color: rgba(0, 212, 255, 0.6);
+  transition: all 0.3s ease-in-out;
+}
+
+main a:hover {
+  text-decoration: none;
+  color: rgba(0, 212, 255, 1);
+}
+
+main div {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(25, 25, 25, 0.85);
+  border-radius: 5px;
+}
+
+.fa-robot {
+  color: rgba(0, 212, 255, 1);
+  font-size: 3rem;
+}

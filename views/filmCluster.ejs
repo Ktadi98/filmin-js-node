@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/imgs/favicon.ico" />
+    <title>Filmin'</title>
+
+    <!-- Iconos Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!--Estilos generales-->
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- Estilos generales -->
+    <link rel="stylesheet" href="css/responsive.css" />
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="css/filmCluster.css" />
+
+    <!--Scripts Propios-->
+    <script src="js/header.js"></script>
+    <script type="module" src="js/filmCluster.js"></script>
+  </head>
+  <body>
+    <%-include("partials/header")%>
+
+    
+     <!-- Menú lateral de categorias -->
+     <!-- Basado en : https://www.w3schools.com/howto/howto_js_sidenav.asp -->
+     <div id="categorias" style="display:none" class="sidenav">
+      <span id="concealCategories">&#171;</span>
+      <span id="nameProfile">¡Bienvenido <%=profileName%>!</span>
+      <img id="imgProfile" src="<%=profilePhoto%>" alt="foto_perfil">
+      <a class="cat" href="#">Comedia</a>
+      <a class="cat" href="#">Drama</a>
+      <a class="cat" href="#">Acción</a>
+      <a class="cat" href="#">Aventura</a>
+      <br>
+      <a href="#" id="atras">Menú Principal</a>
+    </div>
+    <main class="row">
+      <!--Buscador-->
+      <div id="searchBarBox">
+        <span id="showCategories">&#187;</span>
+        <input type="text" id="searchBar">
+        <i id="search" class="fa fa-search"></i>
+      </div>
+      
+      <!-- Carrousel que muestra los vídeos a los que el usuario le ha dado "Me gusta" -->
+      <% if (videosLike.length >0) {%>
+       <section class="row col-m-12">
+        <div col-m-12 class="carrouselTitleBox">
+          <span class="carrouselTitle">Me gusta</span>
+        </div>
+        <div class="contentCarrousel">
+          <div class="videos">
+            <% for(let i=0; i < videosLike.length; i++) { %> <% if (videosLike[i].foto_video !== null) { %>
+              <div
+                class="contentBox"
+                style="
+                  justify-content: center;
+                  align-items: center;
+                  background-image: url('<%=videosLike[i].foto_video%>');
+                "
+                titulo="<%=videosLike[i].titulo%>"
+                anyo =<%=videosLike[i].anyo_publicacion%> 
+                score = <%=videosLike[i].imbd_rating%>
+                duracion =<%=videosLike[i].duracion%>
+                imagen = "<%=videosLike[i].foto_video%>"
+                tipo = <%=videosLike[i].tipo%>
+                genero = "<%=videosLike[i].genero%>"
+                descripcion = "<%=videosLike[i].descripcion%>"
+                video ="<%=videosLike[i].video%>"
+                <% let title = videosLike[i].titulo; %>
+                eval = <%=evals[title][1]%>
+                <a href="#"></a>
+              </div>
+              <%} %> <% } %>
+          </div> 
+       <!-- Next and previous buttons  -->
+       </div>
+        <span class="prev">&#10094;</span>
+        <span class="next">&#10095;</span>
+      </section>
+      <% } %>
+
+      <!-- Carrousel que muestra los vídeos de tipo "Serie" -->
+      <section class="row col-m-12">
+        <div class="carrouselTitleBox">
+          <span class="carrouselTitle">Series</span>
+        </div>
+        <div class="contentCarrousel">
+          <div class="videos">
+            <% for(let i=0; i < videosS.length; i++) { %> <% if (videosS[i].foto_video !== null) { %>
+            <div
+              class="contentBox"
+              style="
+                justify-content: center;
+                align-items: center;
+                background-image: url('<%=videosS[i].foto_video%>');
+              "
+              titulo="<%=videosS[i].titulo%>"
+              anyo =<%=videosS[i].anyo_publicacion%> 
+              score = <%=videosS[i].imbd_rating%>
+              duracion =<%=videosS[i].duracion%>
+              imagen = "<%=videosS[i].foto_video%>"
+              tipo = "<%=videosS[i].tipo%>"
+              genero = "<%=videosS[i].genero%>"
+              descripcion = "<%=videosS[i].descripcion%>"
+              video ="<%=videosS[i].video%>"
+              <% let title = videosS[i].titulo; %>
+              eval = <%=evals[title][1]%>
+              <a href="#"></a>
+            </div>
+            <%} %> <% } %>
+          </div>
+          <!-- Next and previous buttons -->
+        </div>
+        <span class="prev">&#10094;</span>
+        <span class="next">&#10095;</span>
+      </section>
+
+      <!-- Carrousel que muestra los vídeos de tipo "Película" -->
+      <section class="row col-m-12">
+        <div class="carrouselTitleBox">
+          <span class="carrouselTitle">Películas</span>
+        </div>
+        <div class="contentCarrousel">
+          <div class="videos">
+            <% for(let i=0; i < videosP.length; i++) { %> <% if (videosP[i].foto_video !== null) { %>
+              <div
+                class="contentBox"
+                style="
+                  justify-content: center;
+                  align-items: center;
+                  background-image: url('<%=videosP[i].foto_video%>');
+                "
+                titulo="<%=videosP[i].titulo%>"
+                anyo =<%=videosP[i].anyo_publicacion%> 
+                score = <%=videosP[i].imbd_rating%>
+                duracion =<%=videosP[i].duracion%>
+                imagen = "<%=videosP[i].foto_video%>"
+                tipo = <%=videosP[i].tipo%>
+                genero = "<%=videosP[i].genero%>"
+                descripcion = "<%=videosP[i].descripcion%>"
+                video ="<%=videosP[i].video%>"
+                <% let title = videosP[i].titulo; %>
+                eval = <%=evals[title][1]%>
+                <a href="#"></a>
+              </div>
+              <%} %> <% } %>
+          </div>
+          <!-- Next and previous buttons -->
+        </div>
+        <span class="prev">&#10094;</span>
+        <span class="next">&#10095;</span>
+      </section>
+
+      <!-- Container modal dónde se muestran los detalles del vídeo seleccionado por el usario -->
+      <div id="modal-box">
+        <div id="modal-content-box">
+          <div id="image-box"></div>
+          <h2 id="titulo"></h2>
+          <span id="cross">&times;</span>
+          <div id="specs"></div>
+          <p id="des"></p>
+          <div>
+            <button id="seeContent" type="button">Ver contenido</button>
+            <button id="like" type="submit">Me gusta &#128077;</button>
+            <button id="dislike" type="submit">No me gusta &#128078;</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Container que contiene el reproductor de video de la peli/serie-->
+
+      <div class="player" id="reproductor">
+        <iframe width="560" height="600" src="#" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>  
+
+    </main>
+    <%-include("partials/footer")%>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+body {
+  background: linear-gradient(
+    10deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 17%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+h1 {
+  font-size: 3rem;
+  color: rgba(2, 0, 36, 1);
+}
+
+main {
+  align-items: flex-start;
+  display: flex;
+  padding: 10px 10px 20px 20px;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.optionsBox {
+  gap: 30px;
+}
+
+.opcionesCuenta {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.opcion {
+  background-color: rgba(25, 25, 25, 0.85);
+  border-radius: 5px;
+  padding: 2px 25px 25px 25px;
+}
+
+.opcion > * {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.opcionesCuenta ul,
+.opcion,
+.infoUser,
+#formInfoUser,
+#formCambioSus {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.opcionesCuenta {
+  padding-right: 200px;
+  list-style: none;
+  border-right: 0.5px solid rgba(255, 255, 255, 0.55);
+}
+
+.opcionesCuenta ul {
+  align-items: flex-start;
+  padding: 0;
+}
+
+.opcionesCuenta ul li {
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.opcionesCuenta ul li:hover {
+  color: rgba(0, 212, 255, 1);
+  cursor: pointer;
+}
+
+input {
+  background-color: rgba(25, 25, 25, 0);
+  border: none;
+  border-bottom: 2px solid #eee;
+  padding: 5px;
+  font-family: "Noto Sans JP", sans-serif;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+input:focus {
+  outline: 0;
+}
+
+button {
+  border: 3px solid white;
+  background-color: rgb(25, 25, 25);
+  color: white;
+  border-radius: 15px;
+  transition: all 0.3s ease-in-out;
+  padding: 5px 10px 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: rgba(0, 212, 255, 1);
+  color: rgb(25, 25, 25);
+}
+
+#listaFacturas {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+#listaFacturas ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  gap: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  main,
+  .opcionesCuenta ul,
+  .opcion:not(:last-child) {
+    align-items: center;
+  }
+
+  .opcionesCuenta {
+    justify-content: center;
+    padding-right: 0;
+    border: 0;
+    padding-bottom: 10px;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.55);
+    font-size: smaller;
+  }
+}

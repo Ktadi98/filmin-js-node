@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/imgs/favicon.ico" />
+    <title>Selección Suscripción</title>
+
+    <!-- Iconos Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!--Estilos generales-->
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- Estilos generales -->
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="css/register2.css" />
+
+    <!--Scripts Propios-->
+    <script src="js/header.js"></script>
+  </head>
+  <body>
+    <%-include("partials/header")%>
+    <main class="row flex-col j-cont-c a-items-c">
+      <div id="eligeSuscripcion col-m-12">
+        <h1>Elige tu suscripción Filmin'</h1>
+      </div>
+      <div id="suscriptionsBox" class="row col-m-12 j-cont-c a-items-c">
+        <template id="suscriptionTemplate">
+          <form novalidate class="suscripcion col-m-3 flex flex-col p-20">
+            <h2></h2>
+            <h3></h3>
+            <p></p>
+            <button type="submit" name=""></button>
+          </form>
+        </template>
+      </div>
+    </main>
+    <%-include("partials/footer")%>
+
+    <!--Scripts Propios-->
+    <script type="module" src="./js/clases/Suscripcion.js"></script>
+    <script type="module" src="./js/register2.js"></script>
+  </body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/imgs/favicon.ico" />
+    <title>Filmin'</title>
+
+    <!-- Iconos Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+
+    <!--Estilos generales-->
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- Estilos generales -->
+    <link rel="stylesheet" href="css/responsive.css" />
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="css/perfil.css" />
+
+    <!--Scripts Propios-->
+    <script src="js/header.js"></script>
+    <script type="module" src="js/perfil.js"></script>
+  </head>
+  <body>
+    <%-include("partials/header")%>
+    <main class="col-m-12">
+      <h1>Mi Cuenta</h1>
+      <section class="col-m-12 optionsBox row">
+        <div class="opcionesCuenta col-m-2">
+          <ul>
+            <li>Información Personal</li>
+            <li>Cambiar contraseña</li>
+            <li>Suscripción</li>
+            <li>Historial de pagos</li>
+          </ul>
+        </div>
+
+        <!-- OPCION 0: FORMULARIO DE DATOS MISC. DEL USUARIO LOGGEADO-->
+  
+        <!-- Vista de visualización -->
+        <div class="opcion row col-m-9">
+          <div class="infoUser row ">
+            <h2>Información Personal</h2>
+            <span>Usuario/Correo Electrónico: <%=info.correo%> </span>
+            <span>Teléfono contacto: <%=info.telefono%></span>
+            <span>Localidad: <%=info.localidad%></span>
+            <span>Dirección: <%=info.direccion%></span>
+            <button class="col-m-6" id="modifyInfoButton" type="button">Modificar Datos</button>
+          </div>
+          <!-- Vista de formulario de actualización -->
+          <form novalidate id="formInfoUser" class="d-none col-m-9">
+            <h2>Información Personal</h2>
+            <label for="telefono">Teléfono:</label>
+            <input class="col-m-6" type="text" name="telefono" id="telefono">
+            <label for="localidad">Localidad:</label>
+            <input class="col-m-6" type="text" name="localidad" id="localidad">
+            <label for="direccion">Dirección:</label>
+            <input class="col-m-6" type="text" name="direccion" id="direccion">
+            <button id="sendInfoButton" class="col-m-6" type="submit">Enviar Datos</button>
+            <button id="backButton" class="col-m-6" type="button">Atrás</button>
+            <span id="errorInfoUser"></span>
+          </form>
+        </div>
+        
+
+        
+
+
+        <!-- OPCION 1: FORMULARIO DE CAMBIO DE CONTRASEÑA -->
+        
+        <form id="formCambioPass" class="opcion col-m-8">
+          <h2>Cambiar contraseña</h2>
+          <form novalidate>
+          <label for="contraseñaNueva1">Nueva Contraseña:</label>
+          <input class="col-m-6" type="password" name="passNueva1" id="contraseñaNueva1">
+          <label for="contraseñaNueva2">Repetir Nueva Contraseña:</label>
+          <input class="col-m-6" type="password" name="passNueva2" id="contraseñaNueva2">
+          <button id="botonCambioPass" class="col-m-6" type="submit">Cambiar</button>
+          <span id="mensajeCambioPass"></span>
+        </form>
+
+        <!-- OPCION 2: VISTA DE SUSCRIPCIÓN ACTUAL Y FORMULARIO DE CAMBIO DE SUSCRIPCIÓN-->
+        <div class="opcion col-m-8">
+          <h2>Suscripción</h2>
+          <p>Tipo de suscripción actual:<%=datosSus.nombre%></p>
+          <form id="formCambioSus" novalidate>
+            <h2>Cambiar Suscripción</h2>
+            <select class="col-m-6" name="seleccion" id="seleccion">
+              <option value="Light" selected >Light</option>
+              <option value="Medium">Medium</option>
+              <option value="Anual">Anual</option>
+            </select>
+            <br/>
+            <button id="cambiarSusButton" class="col-m-6" type="submit">Cambiar</button>
+          </form>
+        </div>
+
+        <!-- OPCION 3: LISTA DE LAS FACTURAS DEL USUARIO LOGGEADO -->
+        <div class="opcion row col-m-8">
+          <h2>Historial de pagos</h2>
+          <ul class=" col-m-11" id="listaFacturas">
+            <ul class="row ">
+              <li class="col-s-2">Fecha Facturación</li>
+              <li class="col-s-2">Identificador Suscripción</li>
+              <li class="col-s-2">Identificador de pago</li>
+            </ul>
+            <% for (let i=0; i<datosFacturas.length;i++) { %>
+              <ul class="row ">
+                <li class="col-s-2"><%=datosFacturas[i].fecha_factura%></li>
+                <li class="col-s-2"><%=datosFacturas[i].idSuscripciones%></li>
+                <li class="col-s-2"><%=datosFacturas[i].idMetodosPago%></li>
+              </ul>
+              <% } %>
+          </ul>
+        </div>
+
+        <!-- OPCION 4: LISTA DE LOS DISPOSITIVOS DEL USUARIO LOGGEADO -->
+        <!--
+        <div class="opcion col-m-8">
+          <h2>Mis dispositivos</h2>
+          <p>
+            Puedes registrar hasta un máximo de 5 dispositivos. Si quisieras añadir un nuevo
+            dispositivo tras haber alcanzado el máximo permitido.
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </p>
+        </div> -->
+
+      </section>
+    </main>
+    <%-include("partials/footer")%>
+    
+  </body>
+</html>

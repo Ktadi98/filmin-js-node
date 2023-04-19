@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/imgs/favicon.ico" />
+    <title>Filmin'</title>
+
+    <!-- Iconos Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!--Animate On Scroll Library-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!--Estilos generales-->
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- Estilos generales -->
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="css/selectPerfil.css" />
+
+    <!--Animate On Scroll Script-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!--Scripts Propios-->
+    <script src="js/header.js"></script>
+    <script type="module" src="js/selectPerfil.js"></script>
+  </head>
+  <body>
+    <%-include("partials/header")%>
+    <main data-aos="fade-up" class="row">
+      <div class="col-m-9"><h1>¿Quién está viendo?</h1></div>
+      <section class="col-m-11 row card-container">
+        <!-- Al cargar la vista, cargamos los perfiles de la BD -- ruta /selectPerfil !!! -->
+        <% for(let i=0; i < perfiles.length; i++) { %>
+        <div
+          class="col-m-3 profile"
+          img="<%=perfiles[i].foto_perfil%>"
+          nombre_perfil="<%=perfiles[i].nombre_perfil%>"
+          perfil_id="<%=perfiles[i].idPerfiles%>"
+        >
+          <img src="<%=perfiles[i].foto_perfil%>" alt="foto_perfil" />
+          <h4><%=perfiles[i].nombre_perfil%></h4>
+          <a class="hiperenlaces" id="<%=perfiles[i].idPerfiles%>" href="#"></a>
+          <span class="pencil d-none">&#9998;</span>
+        </div>
+        <% } %>
+
+        <!-- Si el número de perfiles llega a 5, el botón de "Añadir Perfil" deja de mostrarse -->
+        <% if (contaPerfiles < 5) { %>
+        <div class="col-m-3" id="createProfile">
+          <span>&#8853;</span>
+          <button id="addPerfilButton">Añadir Perfil</button>
+        </div>
+        <% } %>
+      </section>
+      <button id="manageUsers" class="col-m-3">Gestionar Perfiles</button>
+
+      <!-- Container modal dónde se muestra un formulario para añadir un perfil-->
+      <div class="modal-box">
+        <form class="modal-content-box" novalidate enctype="multipart/form-data">
+          <span class="cross">&times;</span>
+          <h3>Añadir Perfil</h3>
+          <input type="text" placeholder="nombre (min 7)" id="nombrePerfil" name="nombrePerfil" />
+          <span></span>
+          <input type="file" id="imagenPerfil" name="imagenPerfil" />
+          <div id="ADDpreview"></div>
+          <span></span>
+          <button id="crearPerfilButton" type="submit">Añadir</button>
+        </form>
+        <span class="mensajeModalBox"></span>
+      </div>
+
+      <!-- Container modal dónde se muestra un formulario para actualizar perfil o borrarlo -->
+      <div class="modal-box" id="formUpdate">
+        <form id="content_update" class="modal-content-box" novalidate enctype="multipart/form-data">
+          <span class="cross">&times;</span>
+          <h3>Actualizar Perfil</h3>
+          <input type="text" id="nombrePerfilUpdate" name="nombrePerfilUpdate" />
+          <span></span>
+          <input type="file" id="imagenPerfilUpdate" name="imagenPerfilUpdate" />
+          <div id="EDITpreview"></div>
+          <span></span>
+          <button id="updatePerfilButton" type="submit">Actualizar</button>
+          <span id="mensajeModalBoxUpdate"></span>
+          <h3>Borrar Perfil:</h3>
+          <button id="borrarPerfilButton" type="submit">Borrar</button>
+          <span class="mensajeModalBox"></span>
+        </form>
+      </div>
+    </main>
+    <%-include("partials/footer")%>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

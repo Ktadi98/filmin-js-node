@@ -1,0 +1,25 @@
+/*==================================Estilos mensajes error validación================================*/
+
+.error {
+  border-bottom: 1px solid red;
+}
+
+.checked {
+  border-bottom: 1px solid lightgreen;
+}
+
+span {
+  color: red;
+  font-size: 12px;
+}
+
+.checked + span,
+.checked + i + span {
+  color: lightgreen;
+}
+
+.passMessage {
+  color: white;
+  opacity: 0.8;
+}
+

@@ -1,0 +1,91 @@
+body {
+  background: linear-gradient(
+    10deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 37%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/*Estilos del cuerpo del formulario*/
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+#cajaContacto {
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(25, 25, 25);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 58px 30px;
+  gap: 15px;
+}
+
+#cajaContacto div {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  font-size: 15px;
+  background-color: rgb(25, 25, 25);
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+label {
+  color: rgba(0, 212, 255, 1);
+}
+
+input:focus {
+  outline: 0;
+}
+
+textarea {
+  resize: none;
+  padding: 10px;
+  width: 100%;
+  height: 150px;
+  background-color: rgba(255, 255, 255, 0);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/*Estilos del pie del formulario*/
+
+button {
+  border: 3px solid white;
+  background-color: rgb(25, 25, 25);
+  color: white;
+  border-radius: 15px;
+  transition: all 0.3s ease-in-out;
+  padding: 5px 10px 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: rgba(0, 212, 255, 1);
+  color: rgb(25, 25, 25);
+}
+
+a {
+  text-decoration: none;
+  color: rgba(0, 212, 255, 1);
+}

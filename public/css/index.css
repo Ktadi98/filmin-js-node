@@ -1,0 +1,277 @@
+/*==================Imagen de fondo================================*/
+
+body {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../assets/imgs/films.jpg");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+/*TODO: header fixed?*/
+
+/* header {
+    position: fixed;
+    width: 100%;
+} */
+
+/*=======================Estilos de las cartas de precios de la plataforma=========*/
+
+.card-container {
+  padding: 15px;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-item {
+  display: flex;
+  justify-content: center;
+  flex-flow: column wrap;
+  align-items: center;
+  background-color: var(--first-bg-color);
+  opacity: 0.95;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  height: 250px;
+  transition: all 200ms ease-in-out;
+}
+
+.card-item:hover {
+  box-shadow: 0px -5px 5px rgba(255, 255, 255, 0.2) inset;
+}
+
+.card-item p {
+  color: rgba(174, 186, 255, 1);
+}
+
+.card-item h2 {
+  color: var(--border-font-color);
+}
+
+.sus {
+  font-size: larger;
+  justify-self: flex-start;
+}
+
+/*============Estilos de la sección de eslogan*==============*/
+
+.eslogan {
+  background-color: var(--first-bg-color);
+  padding: 15px;
+  gap: 20px;
+}
+
+.eslogan p {
+  color: #f8f9fa;
+  text-align: center;
+}
+
+#eslogan1 {
+  font-size: 3.5rem;
+}
+
+#eslogan2 {
+  font-size: 1.5rem;
+}
+
+/*=======================Estilos del slider================================*/
+/*Basado en el código de esta página: https://csswizardry.com/2011/10/fully-fluid-responsive-css-carousel/  */
+
+.video-carousel {
+  background: var(--bg-gradient);
+  height: 30vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.videos {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 30px;
+  padding: 15px;
+  animation: slider 100s linear infinite;
+}
+
+.videos div {
+  height: 100%;
+  border-radius: 5px;
+}
+
+.videos div img {
+  border-radius: inherit;
+  object-fit: contain;
+  height: 100%;
+  max-height: 100%;
+}
+
+/*Animación de la pagina de HBO*/
+
+@keyframes slider {
+  0% {
+    transform: translateX(0);
+  }
+
+  99.99% {
+    transform: translateX(-2790px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/*=======================Estilos de la lista de funciones*=================*/
+
+.funciones {
+  background-color: var(--first-bg-color);
+  color: #f8f9fa;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  gap: 30px;
+  flex-wrap: nowrap;
+}
+
+.funciones div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.funciones span {
+  font-size: 160px;
+}
+
+/*=======================Estilos de la lista de dispositivos*=================*/
+
+.dispositivos {
+  background: var(--bg-gradient);
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  color: #f8f9fa;
+  padding: 20px;
+  gap: 30px;
+}
+
+.dispositivos div,
+.funciones div {
+  /* border: 2px solid white; */
+  text-align: center;
+  height: 300px;
+  padding: 15px;
+}
+
+.dispositivos h2,
+.funciones h2 {
+  margin: 10px 0;
+}
+
+.dispositivos hr,
+.funciones hr {
+  height: 3px;
+  background-color: rgba(0, 212, 255, 1);
+  border-radius: 3px;
+  width: 100px;
+  margin: 10px auto;
+}
+
+/*=======================Estilos de las preguntas usuales===================*/
+
+.usual-questions {
+  color: #f8f9fa;
+  padding: 30px;
+  align-items: center;
+  /* background: radial-gradient(circle at 100%, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 37%, rgba(0, 212, 255, 1) 100%); */
+}
+
+.usual-questions .questions {
+  background-color: var(--first-bg-color);
+  opacity: 0.95;
+  border-radius: 5px;
+  padding: 50px;
+  text-align: justify;
+  margin: auto;
+  gap: 10px;
+}
+
+.questions p {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  gap: 10px;
+}
+
+.questions div {
+  border: none;
+  border-bottom: 1px solid white;
+  height: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.question {
+  color: rgba(0, 212, 255, 1);
+}
+
+.unconceal {
+  animation: concealingY 2s ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.conceal {
+  animation: concealingReverseY 2s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
+@keyframes concealingReverseY {
+  from {
+    display: block;
+  }
+
+  to {
+    display: none;
+  }
+}
+
+@keyframes concealingY {
+  from {
+    transform: none;
+  }
+
+  to {
+    transform: block;
+  }
+}
+
+/*===============================Estlios de los signos "+" y "-" de la seccion de FAQ=================*/
+
+.add {
+  justify-self: flex-end;
+  position: absolute;
+  right: 0;
+  font-size: 2.5rem;
+  transition: all 0.1s ease-in-out;
+}
+
+.add:hover {
+  color: rgba(0, 212, 255, 1);
+  cursor: pointer;
+}
+
+.add + p {
+  display: none;
+}
+
+@media screen and (max-width: 576px) {
+  .add {
+    right: -35px;
+  }
+}

@@ -1,0 +1,413 @@
+/*Estilos generales*/
+
+body {
+  background: linear-gradient(
+    10deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 87%,
+    rgba(0, 212, 255, 1) 100%
+  );
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/*Estilos para la barra de búsqueda e iconos del menú*/
+
+#searchBarBox {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+#searchBar {
+  padding: 6px;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+  margin-top: 8px;
+  background-color: rgba(255, 255, 255, 0);
+  margin-right: 16px;
+  font-size: 17px;
+  width: 85%;
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+#search,
+#showCategories,
+#concealCategories {
+  transition: all 0.3s ease-in-out;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+#showCategories {
+  font-size: 3.5rem;
+  position: absolute;
+  left: 10px;
+}
+
+#search:hover,
+#showCategories:hover,
+#concealCategories:hover {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+#searchBar:focus {
+  outline: none;
+}
+
+/*============================INICIO-Estilos para la caja lateral de categorías*=======================*/
+
+#categorias {
+  height: 1745px;
+  width: 0;
+  position: absolute;
+  z-index: 1;
+  top: 154px;
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+  border-radius: .5px;
+}
+
+#categorias a, #nameProfile, #imgProfile {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: rgba(255, 255, 255, 0.65);
+  display: block;
+  transition: 0.3s;
+}
+
+#imgProfile {
+  width: 200px;
+}
+
+#nameProfile {
+  font-size: 15px;
+}
+
+#categorias a:hover {
+  color: rgba(0, 212, 255, 1);
+}
+
+main {
+  transition: margin-left 0.5s;
+  padding: 20px;
+}
+
+#concealCategories {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 3.5rem;
+  margin-left: 50px;
+}
+
+@media screen and (max-width: 576px) {
+  #categorias {
+    padding-top: 20px;
+    width: 0%;
+    height: 60%;
+    position: absolute;
+    z-index: 1;
+    top: 135px;
+    transition: 0.5s;
+    overflow-y: hidden;
+  }
+  #categorias a {
+    font-size: 18px;
+  }
+  #imgProfile {
+    width: 100px;
+  }
+
+  main {
+    transition: margin-top 0.5s;
+    padding: 20px;
+  }
+}
+
+/*============================FIN-Estilos para la caja lateral de categorías*=======================/
+
+/*Estilos para la caja que contiene las pelis/series de la portada*/
+
+main {
+  padding: 15px;
+  flex-direction: column;
+  gap: 20px;
+}
+
+section {
+  border: 2px solid black;
+  border-radius: 7px;
+  gap: 15px;
+  padding: 10px;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(25, 25, 25, 0.85);
+  position: relative;
+}
+
+.carrouselTitle {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 2rem;
+  margin: 0 auto;
+  display: block;
+  /* border: 2px solid yellow; */
+}
+
+.contentCarrousel {
+  width: 100%;
+  overflow: hidden;
+  padding: 5px;
+  /* border: 3px solid green; */
+  position: relative;
+}
+
+.videos {
+  /* border: 5px solid purple; */
+  width: 1000%;
+  height: 100%;
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+}
+
+.contentBox {
+  /* border: 2px solid red; */
+  position: relative;
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+  width: 320px;
+  height: 400px;
+  border-radius: 7px;
+}
+
+.contentBox a {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  /*z-index: 1;*/
+}
+.contentBox:hover::before {
+  content: "\25BA";
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+  font-size: 50px;
+  color: white;
+}
+
+.contentBox:hover {
+  filter: brightness(80%);
+  cursor: pointer;
+}
+/*==================Based on W3SCHOOLS CODE=========== */
+
+/* Next & previous buttons */
+.prev,
+.next {
+  position: absolute;
+  top: 30%;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  user-select: none;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 1);
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+/* Position the "next button" to the right */
+.next,
+.prev {
+  border-radius: 50%;
+  top: 10px;
+}
+
+.next {
+  right: 20px;
+}
+
+.prev {
+  left: 20px;
+}
+
+.prev:hover,
+.next:hover {
+  color: rgba(0, 212, 255, 1);
+  cursor: pointer;
+}
+
+/*=========Estilos contenedor modal para el detalles de la películas/serie==========*/
+/*Basado en : https://www.w3schools.com/howto/howto_css_modals.asp*/
+
+#modal-box,
+#reproductor {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+#modal-content-box,
+#reproductor > * {
+  background-color: #fefefe;
+  border-radius: 7px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  background-color: rgba(25, 25, 25, 0.85);
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  color: white;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+#image-box {
+  width: 100%;
+  background-position: left;
+  background-repeat: no-repeat; 
+  background-size: contain;
+  height: 300px;
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+/*Estilos de la caja modal que aparece al clickar un vídeo*/
+#specs {
+  display: flex;
+  gap: 10px;
+}
+
+#specs span {
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 6px;
+  padding: 5px;
+}
+/* The Close Button */
+#cross {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+
+#cross:hover,
+#cross:focus {
+  color: rgba(0, 212, 255, 1);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  border: 3px solid white;
+  background-color: rgb(25, 25, 25);
+  color: white;
+  border-radius: 15px;
+  transition: all 0.3s ease-in-out;
+  padding: 5px 10px 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: rgba(0, 212, 255, 1);
+  color: rgb(25, 25, 25);
+}
+
+.clicked {
+  background-color: rgba(0, 212, 255, 1);
+}
+
+@media screen and (max-width: 576px) {
+  .contentBox {
+    width: 250px;
+    height: 250px;
+  }
+
+  .carrouselTitle {
+    font-size: 1rem;
+  }
+
+  .next,
+  .prev {
+    font-size: 0.8rem;
+    width: 30px;
+    height: 30px;
+  }
+  #modal-box,
+  #reproductor {
+    position: absolute;
+  }
+
+  #showCategories,
+  #concealCategories {
+    font-size: 1.5rem;
+  }
+
+  #reproductor {
+    height: 60%;
+  }
+
+  #modal-content-box {
+    align-items: center;
+  }
+
+  #image-box {
+    background-position: center;
+  }
+
+  #specs {
+    flex-direction: column;
+  }
+
+  #modal-content-box p,
+  #modal-content-box span {
+    font-size: smaller;
+    text-align: center;
+  }
+
+  #seeContent {
+    align-self: center;
+  }
+}

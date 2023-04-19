@@ -1,0 +1,239 @@
+body {
+  background: linear-gradient(10deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/*Estilos de la caja de los perfiles y los botones de interacción con los perfiles*/
+main {
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px;
+}
+
+h1,
+h3 {
+  color: #f8f9fa;
+  text-align: center;
+}
+
+.profile a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+/* PENCIL ICON  */
+.pencil {
+  font-size: 2rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.pencil:hover {
+  color: rgba(0, 212, 255, 1);
+}
+
+.depth-one {
+  z-index: 1;
+}
+
+section {
+  /* border: 1px solid black; */
+  padding: 20px;
+  justify-content: center;
+  gap: 40px;
+}
+
+.profile,
+#createProfile {
+  border: 2px solid rgba(0, 0, 0, 0.8);
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  padding: 10px;
+  position: relative;
+  gap: 10px;
+}
+
+.profile:hover,
+#createProfile:hover {
+  color: #f8f9fa;
+}
+
+span {
+  font-size: 3rem;
+}
+
+#createProfile > * {
+  margin-top: -10px;
+}
+
+.profile img {
+  display: block;
+  width: 50px;
+  height: auto;
+}
+
+#manageUsers,
+#addPerfilButton {
+  border: 2px solid #f8f9fa;
+  border-radius: 3px;
+  padding: 10px;
+  color: #f8f9fa;
+  background-color: rgba(255, 255, 255, 0);
+  transition: all 0.3s ease-in-out;
+}
+
+.profile:hover,
+#createProfile:hover,
+#manageUsers:hover {
+  cursor: pointer;
+}
+
+#manageUsers:hover {
+  color: rgba(0, 212, 255, 1);
+  border: 2px solid rgba(0, 212, 255, 1);
+}
+
+#addPerfilButton:hover {
+  cursor: pointer;
+}
+
+/*==================================INICIO:ESTILOS DE LA CAJA MODAL=========================*/
+
+.modal-box {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content-box {
+  background-color: #fefefe;
+  border-radius: 7px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  background-color: rgba(25, 25, 25, 0.85);
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  color: white;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+.modal-box span {
+  font-size: 12px;
+}
+
+/* The Close Button */
+.cross {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+
+.cross:hover,
+.cross:focus {
+  color: rgba(0, 212, 255, 1);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#addPerfilButton,
+#crearPerfilButton,
+#updatePerfilButton,
+#borrarPerfilButton {
+  border: 3px solid white;
+  background-color: rgb(25, 25, 25);
+  color: white;
+  border-radius: 15px;
+  transition: all 0.3s ease-in-out;
+  padding: 5px 10px 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#addPerfilButton:hover,
+#crearPerfilButton:hover,
+#updatePerfilButton:hover,
+#borrarPerfilButton:hover {
+  background-color: rgba(0, 212, 255, 1);
+  color: rgb(25, 25, 25);
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+/*==Estilos del botón de añadir imagen para la actualización de perfil===*/
+.custom-file-input {
+  padding-left: 0 !important;
+}
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: 'Añade una imagen';
+  border: 1px solid rgba(0, 212, 255, 1);
+  padding: 5px 8px;
+  cursor: pointer;
+}
+
+/*======Estilos de la vista previa de imagen de perfil=====*/
+
+#ADDpreview img,  #EDITpreview img {
+  width: 75px;
+} 
+/*==================================FIN:ESTILOS DE LA CAJA MODAL===============================*/
+
+@media screen and (max-width: 576px) {
+  section > div {
+    width: 50% !important;
+  }
+
+  button {
+    width: 50% !important;
+  }
+
+  .modal-content-box {
+    align-items: center;
+  }
+
+  .modal-content-box p,
+  .modal-content-box span {
+    font-size: smaller;
+    text-align: center;
+  }
+}
